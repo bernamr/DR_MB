@@ -43,24 +43,28 @@ count_lines:
 
 
 
-
-# ----------------------------------
-#      UPLOAD PACKAGE TO PYPI
-# ----------------------------------
-PYPI_USERNAME=<AUTHOR>
-#build:
-#@python setup.py sdist bdist_wheel
-
-#pypi_test:
-#	@twine upload -r testpypi dist/* -u $(PYPI_USERNAME)
-
-#pypi:
-#	@twine upload dist/* -u $(PYPI_USERNAME)
-
-
 run_api:
 	uvicorn	api.fast:app --reload
 
 
-run_streamlit:
+streamlit:
 	streamlit run app.py
+
+# ----------------------------------
+
+streamlit:
+	-@streamlit run app.py
+
+heroku_login:
+	-@heroku login
+
+heroku_upload_public_key:
+	-@heroku keys:add ~/.ssh/id_ed25519.pub
+
+#NN: APP_NAME = diabetic-retinopathy-nn
+heroku_create_app:
+	-@heroku create --ssh-git ${dr-martin-v1}
+
+deploy_heroku:
+	-@git push heroku master
+	-@heroku ps:scale web=1

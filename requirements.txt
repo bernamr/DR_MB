@@ -1,29 +1,26 @@
-# packaging
+python-gitlab
 pip>=9
 setuptools>=26
 twine
 wheel>=0.29
+numpy==1.18.5
 
-# data science
 numpy
 tensorflow-cpu
 opencv-python
 
-# tests/linter
 black
 coverage
 flake8
 pytest
 yapf
 
-# API
 gcsfs
 google-cloud-storage
 uvicorn
 fastapi
 requests
 
-# utilities
 six>=1.14
 memoized-property
 termcolor
