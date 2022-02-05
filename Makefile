@@ -64,4 +64,4 @@ run_api:
 
 
 run_streamlit:
-	streamlit run app.py  --host 127.0.0.2
+	streamlit run app.py
