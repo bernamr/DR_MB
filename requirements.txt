@@ -7,7 +7,6 @@ numpy==1.18.5
 
 numpy
 tensorflow-cpu
-opencv-python
 
 black
 coverage
@@ -22,6 +21,4 @@ fastapi
 requests
 
 six>=1.14
-memoized-property
-termcolor
 streamlit
