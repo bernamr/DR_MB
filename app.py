@@ -52,8 +52,3 @@ if file:
 else:
     print('no es una imagen')
     params =None
-
-api = requests.get('http://127.0.0.1:8081/predict')  #Probar con local host
-prediction = api.json()
-
-st.write(f'**{prediction}**')

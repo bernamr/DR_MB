@@ -59,8 +59,7 @@ PYPI_USERNAME=<AUTHOR>
 
 
 run_api:
-	uvicorn	api.fast:app --reload  --port 8081
-
+	uvicorn	api.fast:app --reload
 
 
 run_streamlit:

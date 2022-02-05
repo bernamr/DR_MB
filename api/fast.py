@@ -54,4 +54,3 @@ async def predict(file): #Como entra el input
     #output_pred = np.array(output_probs[0])
 
     #return 'hola'
-    return type(img)

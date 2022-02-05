@@ -21,8 +21,8 @@ gcsfs
 google-cloud-storage
 uvicorn
 fastapi
-request
-PILOW
+requests
+
 # utilities
 six>=1.14
 memoized-property
