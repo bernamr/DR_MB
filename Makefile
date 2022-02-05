@@ -48,17 +48,20 @@ count_lines:
 #      UPLOAD PACKAGE TO PYPI
 # ----------------------------------
 PYPI_USERNAME=<AUTHOR>
-build:
-	@python setup.py sdist bdist_wheel
+#build:
+#@python setup.py sdist bdist_wheel
 
-pypi_test:
-	@twine upload -r testpypi dist/* -u $(PYPI_USERNAME)
+#pypi_test:
+#	@twine upload -r testpypi dist/* -u $(PYPI_USERNAME)
 
-pypi:
-	@twine upload dist/* -u $(PYPI_USERNAME)
-
-
+#pypi:
+#	@twine upload dist/* -u $(PYPI_USERNAME)
 
 
 run_api:
-	uvicorn	api.fast:app --reload  # load web server with code autoreload
+	uvicorn	api.fast:app --reload  --port 8081
+
+
+
+run_streamlit:
+	streamlit run app.py  --host 127.0.0.2
