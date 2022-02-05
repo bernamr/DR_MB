@@ -21,3 +21,5 @@ def predict(img_file: UploadFile = File(...)):
 
 
 image = st.file_uploader("Upload an image", type=["jpeg", 'jpg', 'png'])
+
+https://github.com/Leoes98/diabetic_retinopathy_DL/blob/master/api/fast.py

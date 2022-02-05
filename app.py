@@ -24,6 +24,7 @@ if file:
     imagen = np.asanyarray(imagen)
     input_data = imagen.resize((224, 224,3))
     input_data = np.expand_dims(input_data, 0)
+    input_data = np.array(input_data, dtype=np.uint8)
 
     interpreter.set_tensor(input_details[0]['index'], input_data)
     interpreter.invoke()
