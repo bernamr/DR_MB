@@ -6,7 +6,6 @@ wheel>=0.29
 
 # data science
 numpy
-scikit-learn
 tensorflow-cpu
 opencv-python
 
@@ -20,12 +19,10 @@ yapf
 # API
 gcsfs
 google-cloud-storage
-mlflow
-s3fs
 uvicorn
 fastapi
 request
-
+PILOW
 # utilities
 six>=1.14
 memoized-property
