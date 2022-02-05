@@ -22,7 +22,7 @@ if file:
 
     imagen = Image.open(file)
     imagen = np.asanyarray(imagen)
-    input_data = np.asarray(imagen.resize((224, 224)))[..., :3]
+    input_data = np.asarray(imagen.resize((224, 224,3)))
     input_data = np.expand_dims(input_data, 0)
 
     interpreter.set_tensor(input_details[0]['index'], input_data)

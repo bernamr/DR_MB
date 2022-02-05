@@ -18,3 +18,6 @@ def predict(img_file: UploadFile = File(...)):
     input_image = Image.open(img_file.file)
     label_probability = model.run_from_filepath(np.array((input_image)))
     return label_probability
+
+
+image = st.file_uploader("Upload an image", type=["jpeg", 'jpg', 'png'])
