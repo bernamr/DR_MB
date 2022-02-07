@@ -8,8 +8,9 @@ from PIL import Image
 
 
 def load_image(image):
-    imagen = cv2.imread(image, cv2.IMREAD_GRAYSCALE)
-    input_data = cv2.resize(imagen, (224, 224), interpolation=cv2.INTER_AREA)
+    imagen = Image.open(image)
+    imagen = np.asanyarray(imagen)
+    input_data = np.resize(imagen, (224, 224, 3))
     input_data = np.expand_dims(input_data, 0)
 
     return input_data
@@ -18,8 +19,6 @@ def load_model(image):
     #loda model
     interpreter = tf.lite.Interpreter(model_path="model.tflite")
     interpreter.allocate_tensors()
-
-    interpreter = load_model()
 
     # Get input and output tensors.
     input_details = interpreter.get_input_details()
@@ -34,3 +33,18 @@ def load_model(image):
     output_pred = np.array(output_probs[0])
 
     return output_pred
+
+def output(output):
+    labels = {
+        0: 'grado 3',
+        1: 'grado 2',
+        2: 'grado 4',
+        3: 'grado 1',
+        4: 'grado 0'
+    }
+
+    for i in labels.keys():
+        if np.where(output == output.max())[0][0] == i:
+            grado = labels[i]
+
+    return grado
