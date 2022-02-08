@@ -13,7 +13,7 @@ coverage
 flake8
 pytest
 yapf
-tkinter
+
 
 gcsfs
 google-cloud-storage
