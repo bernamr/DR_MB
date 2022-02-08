@@ -45,15 +45,14 @@ count_lines:
 
 run_api:
 	uvicorn	api.fast:app --reload
-
-
-streamlit:
-	streamlit run app.py
-
+#run_api3:
+#	uvicorn	api.fast3:app3 --reload
 # ----------------------------------
 
 streamlit:
 	-@streamlit run app.py
+#streamlit3:
+#	-@streamlit run app3.py
 
 heroku_login:
 	-@heroku login
